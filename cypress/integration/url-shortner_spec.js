@@ -62,6 +62,12 @@ describe('Show opening page view of Url Shortener App', () => {
       .get('.shorten-button').click()
   })
 
+  it('Should reflect the users input in the title field', () => {
+    cy.get('.title-input').should('be.visible').type('url title')
+      .get('.url-to-shorten').should('be.visible').type('a url')
+      .get('.shorten-button').should('be.visible').click()
+  })
 
+  it()
 
 })
