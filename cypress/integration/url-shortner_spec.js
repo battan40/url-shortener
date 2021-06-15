@@ -49,6 +49,7 @@ describe('Show opening page view of Url Shortener App', () => {
     cy.get('form').find('input').should('be.visible')
       .get('form input[type=text]').should('be.visible')
       .get('form').find('input[type=text]').should('have.length', 2)
+      
       .get('.url-to-shorten').should('be.visible')
   })
 
@@ -85,8 +86,6 @@ describe('Show opening page view of Url Shortener App', () => {
     cy.get('.shorten-button').click()
     cy.get('.App').find('.url').should('be.visible')
       .get('.App').find('.url').should('have.length', 3)
-
-
   })
 
 })
