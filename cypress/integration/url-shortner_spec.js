@@ -81,7 +81,9 @@ describe('Show opening page view of Url Shortener App', () => {
       .type('https://images.unsplash.com/photo...')
     cy.get('form input').eq(1).should('have.attr', 'value', 'https://images.unsplash.com/photo...')
 
-
+    cy.get('.shorten-button').click()
+    cy.get('.App').find('.url').should('be.visible')
+      .get('.App').find('.url').should('have.length', 3)
 
 
   })
