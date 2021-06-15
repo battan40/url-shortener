@@ -51,9 +51,16 @@ describe('Show opening page view of Url Shortener App', () => {
       .get('.url-to-shorten').should('be.visible')
   })
 
+  it('Should show placeholders for inputs of title and url', () => {
+    cy.get('.title-input').type('Title...')
+      .get('.url-to-shorten').type('URL to Shorten...')
+  })
 
-
-
+  it('Should give the user a button to invite url shortening', () => {
+    cy.get('.shorten-button').should('be.visible')
+      .get('.shorten-button').should('contain', 'Shorten Please!')
+      .get('.shorten-button').click()
+  })
 
 
 
