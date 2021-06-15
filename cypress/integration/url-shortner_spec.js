@@ -30,7 +30,10 @@ describe('Show opening page view of Url Shortener App', () => {
       .get('.main-title').should('contain', 'URL')
   })
 
-
+  it('Should display the existing url titles on page load, for ui', () => {
+    cy.get('.url-title').should('be.visible')
+      .get('.url-title').should('contain', 'Awesome')
+  })
 
 
 
