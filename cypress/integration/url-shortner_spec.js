@@ -40,9 +40,16 @@ describe('Show opening page view of Url Shortener App', () => {
       .get('.url-short').should('contain', 'http')
   })
 
+  it('Should display all existing urls', () => {
+    cy.get('.url').should('be.visible')
+      .get('.url').should('have.length', 1)
+  })
 
-
-
+  it('Should display the form for the user', () => {
+    cy.get('form').find('input').should('be.visible')
+      .get('form input[type=text]').should('be.visible')
+      .get('.url-to-shorten').should('be.visible')
+  })
 
 
 
