@@ -18,7 +18,7 @@ export class App extends Component {
 
   componentDidMount = () => {
     getUrls()
-    .then(data => this.setState({urls: [...data.urls[0]]}))
+    .then(data => this.setState({urls: [...data.urls]}))
     .catch(err => 'uhoh, having trouble with that url.  Please try again later.')
   }
 
