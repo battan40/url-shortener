@@ -48,6 +48,7 @@ describe('Show opening page view of Url Shortener App', () => {
   it('Should display the form for the user', () => {
     cy.get('form').find('input').should('be.visible')
       .get('form input[type=text]').should('be.visible')
+
       .get('.url-to-shorten').should('be.visible')
   })
 
@@ -64,7 +65,10 @@ describe('Show opening page view of Url Shortener App', () => {
 
   it('Should reflect the users input in the title field', () => {
     cy.get('.title-input').should('be.visible').type('url title')
-      .get('.url-to-shorten').should('be.visible').type('a url')
+
+
+    cy.get('.url-to-shorten').should('be.visible').type('a url')
+
       .get('.shorten-button').should('be.visible').click()
   })
 
@@ -73,6 +77,9 @@ describe('Show opening page view of Url Shortener App', () => {
       .type('Awesome Photo')
     cy.get('form input').eq(0).should('have.attr', 'value', 'Awesome Photo')
 
+    cy.get('form').find('input[type=text]').eq(1)
+      .type('https://images.unsplash.com/photo...')
+    cy.get('form input').eq(1).should('have.attr', 'value', 'https://images.unsplash.com/photo...')
 
 
 
