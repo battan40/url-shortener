@@ -71,9 +71,11 @@ describe('Show opening page view of Url Shortener App', () => {
   it('Should the user should see their new shortened url on display', () => {
     cy.get('form').find('input[type=text]').eq(0)
       .type('Awesome Photo')
-    cy.get('form input').should('have.attr', 'value', 'Awesome Photo')
+    cy.get('form input').eq(0).should('have.attr', 'value', 'Awesome Photo')
 
-    cy.get('form').find('input[type=text]').eq(0)
+
+
+
 
   })
 
