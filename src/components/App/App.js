@@ -15,7 +15,6 @@ export class App extends Component {
   componentDidMount = () => {
     getUrls()
     .then(data => this.setState({urls: [...data.urls[0].short_url]}))
-
   }
 
   render() {
