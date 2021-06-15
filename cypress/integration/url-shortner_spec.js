@@ -35,7 +35,10 @@ describe('Show opening page view of Url Shortener App', () => {
       .get('.url-title').should('contain', 'Awesome')
   })
 
-
+  it('Should show urls to user', () => {
+    cy.get('.url-short').should('be.visible')
+      .get('.url-short').should('contain', 'http')
+  })
 
 
 
